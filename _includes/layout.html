@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html {% if site.language %}lang="{{ site.language }}"{% endif %}>
+{% include _partial/head.html %}
+<body>
+    <header>
+        {% include _partial/body_header.html %}
+    </header>
+    <div id="container">
+        {% if page.layout == 'default' or page.layout == 'post' %}
+            {{content}}
+            {% assign item = page %}
+            {% assign table = true %}
+            {% include _partial/sidebar.html %}
+        {% elsif page.layout == 'page' %}
+            {{ content }}
+        {% endif %}
+    </div>
+    <footer>
+        {% include _partial/footer.html %}
+    </footer>
+
+    {% include _partial/script.html %}
+</body>
+</html>

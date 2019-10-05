@@ -1,0 +1,11 @@
+<div id="footer" >
+		<p class="copyright">
+		© 2019
+		{% if site.author.name %}
+		<a href="{{ site.root }}about" target="_blank" title="{{ site.author.name }}">{{ site.author.name }}</a>
+		{% else %}
+		<a href="{{ site.root }}" title="{{ site.title }}">{{ site.title }}</a>
+		{% endif %}
+		
+		</p>
+</div>
