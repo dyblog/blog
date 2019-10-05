@@ -18,9 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+
+
 title: 道源
 tagline: 升级,从阅读源码开始
-baseurl:
+baseurl: /dyblog
 url:
 assets: /assets
 
@@ -85,3 +87,12 @@ defaults:
 
 author:
   name: 道源
+
+#### Toc
+toc:
+  article: true   ## show contents in article.
+  aside: true     ## show contents in aside.
+
+index:
+  expand: true           ## default is unexpanding,so you can only see the short description of each post.
+  excerpt_link: Read More
