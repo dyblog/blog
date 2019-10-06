@@ -21,7 +21,7 @@
 
 
 title: 道源
-tagline: 升级,从阅读源码开始
+tagline: 执着于每行代码,是另外一种生活
 baseurl: /blog
 url:
 assets: /assets
@@ -71,11 +71,11 @@ widgets:
 language: zh-CN
 
 menu:
-  Home: /
-  Archives: /archives
-  About: /about
+  首页: /
+  归档: /archives
+  关于: /about
 
-paginate: 5
+paginate: 10
 
 defaults:
   -
@@ -95,4 +95,4 @@ toc:
 
 index:
   expand: true           ## default is unexpanding,so you can only see the short description of each post.
-  excerpt_link: Read More
+  excerpt_link: 阅读更多

@@ -4,7 +4,9 @@
 <article class="post-expand {{ item.layout }}" itemprop="articleBody">
     {% include _partial/post/header.html %}
     <div class="article-content">
-        {% if item.excerpt and index %}
+        {% if item.description %}
+        {{ item.description }}
+        {% elsif item.excerpt and index %}
         {{ item.excerpt }}
         {% else %}
         {{ item.content }}
