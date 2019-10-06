@@ -25,6 +25,7 @@ tagline: 执着于每行代码,是另外一种生活
 baseurl: /blog
 url:
 assets: /assets
+port: 80
 
 # Build settings
 theme: minima
