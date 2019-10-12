@@ -24,7 +24,7 @@ title: 道源
 tagline: 执着于每行代码,是另外一种生活
 baseurl:
 url:
-assets: /blog/assets
+assets: /assets
 port: 80
 
 # Build settings
