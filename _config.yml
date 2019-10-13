@@ -72,8 +72,8 @@ widgets:
 language: zh-CN
 
 menu:
-  首页: /
-  归档: /archives
+  最新文章: /
+  学习目录: /archives
   关于: /about
 
 paginate: 10
