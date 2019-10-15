@@ -2673,13 +2673,15 @@ article .article-content img.emoji {
     }
 }
 
-#main section.post {
+#main section.blogPost {
     background: #fafafa;
     margin-bottom: .125em;
+    float: left;
+    width: 100%;
 }
 
 
-#main section.post a {
+#main section.blogPost a {
     display: block;
     border-left: .5em solid #ccc;
     -webkit-transition: border-left 0.45s;
@@ -2692,27 +2694,27 @@ article .article-content img.emoji {
 
 
 @media only screen and (min-width: 768px) {
-    #main section.post a {
+    #main section.blogPost a {
         padding: 1em
     }
 }
 
-#main section.post a:hover {
+#main section.blogPost a:hover {
     border-left: .5em solid #2ca6cb
 }
 
-#main section.post a h1 {
+#main section.blogPost a h1 {
     color: #2ca6cb;
-    line-height: 2
+    line-height: 1
 }
 
-#main section.post a p {
+#main section.blogPost a p {
     color: #817c7c
 }
 
-#main section.post a time {
+#main section.blogPost a time {
     color: #817c7c;
     display: block;
-    margin: .5em 0;
-    font-size: .9em
+    /*margin: .5em 0;*/
+    font-size: 0.9em
 }
