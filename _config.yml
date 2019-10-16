@@ -46,7 +46,6 @@ widgets:
   - category
   - tag
   - links
-  - github-card
   - wechatCgi
 
 language: zh-CN
