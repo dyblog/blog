@@ -2731,3 +2731,9 @@ article .article-content img.emoji {
 #main section.post a p, a, body {
     color: #817c7c;
 }
+
+span.blog-motto-lett {
+    font-size: 0.0001em;
+    margin-left: 10px;
+    color: #2CB6CA;
+}
