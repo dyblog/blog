@@ -2678,6 +2678,7 @@ article .article-content img.emoji {
     margin-bottom: .125em;
     float: left;
     width: 20%;
+    border-bottom: .124em solid #ccc;
 }
 
 
@@ -2703,6 +2704,7 @@ article .article-content img.emoji {
         margin-bottom: .125em;
         float: left;
         width: 20%;
+        border-bottom: .124em solid #ccc;
     }
 }
 
