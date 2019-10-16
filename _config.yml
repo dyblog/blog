@@ -45,7 +45,6 @@ kramdown:
 widgets:
   - category
   - tag
-  - tagcloud
   - links
   - github-card
   - wechatCgi
@@ -69,6 +68,7 @@ defaults:
 
 author:
   name: 道源
+  github: https://github.com/raoshihong
 
 #### Toc
 toc:
