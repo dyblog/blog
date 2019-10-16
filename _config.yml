@@ -73,8 +73,8 @@ widgets:
 language: zh-CN
 
 menu:
-  历史文章: /
   源码学习: /archives
+  历史文章: /
   关于: /about
 
 paginate: 10
