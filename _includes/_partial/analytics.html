@@ -18,6 +18,9 @@
 
 {% if site.baidu_analytics.enable %}
 <script>
+    //百度统计原理: 这里创建了一个<script src="https://hm.baidu.com/hm.js?{{site.baidu_analytics.sitecode}}"><\/script>的元素,当去下载并加装这个js时,百度在这个js中
+    //添加了向后台请求的方法,去获取客户端信息,并将客户端信息返回给服务端,所以需要将该脚本加到任意想统计的页面,一般加到公共head中,这样每次加装刷新页面都会重新加载这个js,并执行
+    //这个js里的方法统计数据发送给后端
     var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
@@ -28,3 +31,5 @@
 </script>
 
 {% endif %}
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
