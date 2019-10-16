@@ -1923,6 +1923,35 @@ section.comment {
     background: #e6e6e6
 }
 
+@media only screen and (min-width: 768px) {
+    .wechatcgilist {
+        width: 45%;
+        float: left;
+        margin: 0 5% 0 0
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .wechatcgilist {
+        width: 100%;
+        float: none;
+        margin: 1em 0 0
+    }
+}
+
+.wechatcgilist li {
+    border-bottom: 1px solid #ccc;
+}
+
+.wechatcgilist li a {
+    display: block;
+    padding: .5em 5%;
+}
+
+.wechatcgilist li a:hover {
+    color: #2ca6cb
+}
+
 .rsspart {
     background: #2ca6cb;
     width: 100%;
