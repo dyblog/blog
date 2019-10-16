@@ -107,3 +107,7 @@ google_analytics:
 baidu_analytics:
   enable: true
   sitecode: 6412f0c01e8c372d398d3bd9f737bf06
+
+totop: true
+
+mathjax: true
