@@ -2654,7 +2654,7 @@ article .article-content img.emoji {
 }
 
 @media only screen and (min-width: 1024px) {
-    .github-card {
+    .github {
         width: 100%;
         float: none;
         margin: 1em 0 0;
@@ -2662,13 +2662,13 @@ article .article-content img.emoji {
 }
 
 @media only screen and (min-width: 768px) {
-    .github-card {
+    .github {
         width: 45%;
         float: left;
         margin: 0 5% 0 0;
     }
 
-    .github-card {
+    .github {
         margin-top: 1.5em;
     }
 }
