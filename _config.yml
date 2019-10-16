@@ -47,7 +47,7 @@ widgets:
   - tag
   - links
   - wechatCgi
-  - github-card
+  - github
 
 language: zh-CN
 
