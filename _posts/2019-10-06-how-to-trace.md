@@ -12,7 +12,7 @@ description: 本篇文章主要介绍本人在工作中是如何采用Spring AOP
 
 ## 背景
 了解需求的背景是我们需要考虑的第一个问题，这是一个怎样的需求？
-![](http://www.raoshihong.com/img/trace/2019-10-16_184711.png)
+![](http://www.raoshihong.com/assets/img/trace/2019-10-16_184711.png)
 大致的需求就是如上图,需要的文本要求如下：
 - 只收集用户新增、修改、删除记录，不收集用户查询记录
 - 需要记录操作数据字段内容的前后变更
