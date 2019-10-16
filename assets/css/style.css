@@ -2334,7 +2334,6 @@ footer {
     -moz-osx-font-smoothing: grayscale;
     /*font-family: "covered_by_your_graceregular";*/
     width: 100%;
-    color: #fff;
     text-align: center;
 }
 
@@ -2729,6 +2728,6 @@ article .article-content img.emoji {
     font-size: 0.9em
 }
 
-#main section.post a p, a, body{
+#main section.post a p, a, body {
     color: #817c7c;
 }
