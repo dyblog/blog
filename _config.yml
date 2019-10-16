@@ -43,9 +43,9 @@ kramdown:
 
 
 widgets:
-  - category
-  - tag
-  - links
+#  - category
+#  - tag
+#  - links
   - wechatCgi
   - github
 
