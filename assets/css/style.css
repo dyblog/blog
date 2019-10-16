@@ -2697,6 +2697,13 @@ article .article-content img.emoji {
     #main section.blogPost a {
         padding: 1em
     }
+
+    #main section.blogPost {
+        background: #fafafa;
+        margin-bottom: .125em;
+        float: left;
+        width: 100%;
+    }
 }
 
 #main section.blogPost a:hover {
