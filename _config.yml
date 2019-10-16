@@ -68,6 +68,7 @@ widgets:
   - tagcloud
   - links
   - github-card
+  - wechatCgi
 
 language: zh-CN
 
