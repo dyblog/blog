@@ -98,3 +98,12 @@ toc:
 index:
   expand: true           ## default is unexpanding,so you can only see the short description of each post.
   excerpt_link: 阅读更多
+
+#### Analytics
+google_analytics:
+  enable: false
+  id:
+  site:
+baidu_analytics:
+  enable: true
+  sitecode: 6412f0c01e8c372d398d3bd9f737bf06
