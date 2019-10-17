@@ -8496,14 +8496,14 @@ window.Q = function (t, i, n) {
                 }, onrelease: function (t, i) {
                     i[Cr].remove(_d)
                 }, ondrag: function (t, i) {
-                    var n = h._n6aseCanvas._km;
-                    if (n) {
-                        var e = i.isH, s = e ? t.dx : t.dy;
-                        if (s && i.scale) {
-                            var r = n[nf] / i[nf];
-                            e ? n[bo](-r * s, 0) : n[bo](0, -r * s), hH.stopEvent(t)
-                        }
-                    }
+                    // var n = h._n6aseCanvas._km;
+                    // if (n) {
+                    //     var e = i.isH, s = e ? t.dx : t.dy;
+                    //     if (s && i.scale) {
+                    //         var r = n[nf] / i[nf];
+                    //         e ? n[bo](-r * s, 0) : n[bo](0, -r * s), hH.stopEvent(t)
+                    //     }
+                    // }
                 }, enddrag: function (t, i) {
                     var n = h[Fu]._km;
                     if (n && n[wR]) {
@@ -9054,14 +9054,14 @@ window.Q = function (t, i, n) {
                 return i.beforeInteractionEvent(e) === !1 ? void this[sg](i) : void i.onInteractionEvent(e)
             }
         }, ondrag: function (t, i) {
-            if (this[QN]) {
-                if (t[ia] && 1 != t.touches[rr]) return void this.enddrag(t, i);
-                z(t);
-                var n = t.dx, e = t.dy, s = i.scale;
-                n /= s, e /= s;
-                var h = new Wh(i, Wh[nB], t, this[QN], this[JN][Zd]);
-                i[eB](this.draggingElements.datas, n, e), i[RD](h)
-            }
+            // if (this[QN]) {
+            //     if (t[ia] && 1 != t.touches[rr]) return void this.enddrag(t, i);
+            //     z(t);
+            //     var n = t.dx, e = t.dy, s = i.scale;
+            //     n /= s, e /= s;
+            //     var h = new Wh(i, Wh[nB], t, this[QN], this[JN][Zd]);
+            //     i[eB](this.draggingElements.datas, n, e), i[RD](h)
+            // }
         }, enddrag: function (t, i) {
             if (this[QN]) {
                 if (this[JN] && this.draggingElements.length) {
@@ -9126,7 +9126,7 @@ window.Q = function (t, i, n) {
                 i[RD](n)
             }
         }, ondrag: function (t, i) {
-            this._kp && i.translate(t.dx || 0, t.dy || 0)
+            // this._kp && i.translate(t.dx || 0, t.dy || 0)
         }, enddrag: function (t, i) {
             if (this._kp) {
                 if (i[wR] !== !1) {
@@ -9317,14 +9317,14 @@ window.Q = function (t, i, n) {
             var c = new Wh(n, Wh[DB], e, r);
             c[wB] = h, n[RD](c)
         }, ondrag: function (t, i) {
-            if (this.element && this._9y) {
-                var n = this._9y, e = this[YR], s = t[fg], h = t[RB], r = i[nf];
-                if (s /= r, h /= r, e.rotate) {
-                    var a = {x: s, y: h};
-                    Zs(a, -e[Fo]), s = a.x, h = a.y
-                }
-                n[AB] = {x: s, y: h}, this[PB](s, h, i, t, t.shiftKey)
-            }
+            // if (this.element && this._9y) {
+            //     var n = this._9y, e = this[YR], s = t[fg], h = t[RB], r = i[nf];
+            //     if (s /= r, h /= r, e.rotate) {
+            //         var a = {x: s, y: h};
+            //         Zs(a, -e[Fo]), s = a.x, h = a.y
+            //     }
+            //     n[AB] = {x: s, y: h}, this[PB](s, h, i, t, t.shiftKey)
+            // }
         }, enddrag: function (t, i) {
             if (this.element && this._9y) {
                 this[KR](), this._k3();
@@ -9344,11 +9344,11 @@ window.Q = function (t, i, n) {
         }, startdrag: function (t, i) {
             t.responded || (t[dN] = !0, this._kp = i[VT](t), i.cursor = gg, this._11Id = this[pd][KR](this._11, this).id)
         }, ondrag: function (t, i) {
-            if (this._kp) {
-                z(t), this[HB] = i.toLogical(t), this.invalidate();
-                var n = new Wh(i, Wh.SELECT_START, t, i[_b]);
-                i[RD](n)
-            }
+            // if (this._kp) {
+            //     z(t), this[HB] = i.toLogical(t), this.invalidate();
+            //     var n = new Wh(i, Wh.SELECT_START, t, i[_b]);
+            //     i[RD](n)
+            // }
         }, enddrag: function (t, i) {
             if (this._kp) {
                 this[UB] && (clearTimeout(this[UB]), this[UB] = null), this._fu(!0), this.destroy(i);
@@ -9572,25 +9572,25 @@ window.Q = function (t, i, n) {
                 this.element.x -= _, this[YR].y -= d
             }
         }, ondrag: function (t, i) {
-            if (this.element && this._9y) {
-                if (this._9y == this[i$]) {
-                    var n = i[VT](t), e = yn(n.x, n.y, this[YR].x, this[YR].y, this._9y.start.x, this._9y[rN].y, !0);
-                    e += this._9y[Fo] || 0, t.shiftKey && (e = Math.round(e / Math.PI * 4) * Math.PI / 4);
-                    var s = this[YR][Fo];
-                    this.element[Fo] = e % (2 * Math.PI);
-                    var h = new Wh(i, Wh.ROTATING, t, this.element);
-                    return h[pv] = s, h.value = this.element[Fo], void i[RD](h)
-                }
-                var r = t.dx, a = t.dy, o = i.scale;
-                if (r /= o, a /= o, this[YR][Fo]) {
-                    var n = {x: r, y: a};
-                    Zs(n, -this[YR][Fo]), r = n.x, a = n.y
-                }
-                var f = this._9y.p, u = this._n4p, c = u.x, _ = u.y, d = u[ca], l = u.height;
-                f.horizontalPosition == nq ? r >= d ? (c += d, d = r - d || 1) : (c += r, d -= r) : f.horizontalPosition == sq && (-r >= d ? (d = -r - d || 1, c -= d) : d += r), f.verticalPosition == hq ? a >= l ? (_ += l, l = a - l || 1) : (_ += a, l -= a) : f[la] == aq && (-a >= l ? (l = -a - l || 1, _ -= l) : l += a), this._4p(c, _, d, l, t.shiftKey);
-                var h = new Wh(i, Wh[y$], t, this[YR]);
-                h.point = this._9y, i[RD](h)
-            }
+            // if (this.element && this._9y) {
+            //     if (this._9y == this[i$]) {
+            //         var n = i[VT](t), e = yn(n.x, n.y, this[YR].x, this[YR].y, this._9y.start.x, this._9y[rN].y, !0);
+            //         e += this._9y[Fo] || 0, t.shiftKey && (e = Math.round(e / Math.PI * 4) * Math.PI / 4);
+            //         var s = this[YR][Fo];
+            //         this.element[Fo] = e % (2 * Math.PI);
+            //         var h = new Wh(i, Wh.ROTATING, t, this.element);
+            //         return h[pv] = s, h.value = this.element[Fo], void i[RD](h)
+            //     }
+            //     var r = t.dx, a = t.dy, o = i.scale;
+            //     if (r /= o, a /= o, this[YR][Fo]) {
+            //         var n = {x: r, y: a};
+            //         Zs(n, -this[YR][Fo]), r = n.x, a = n.y
+            //     }
+            //     var f = this._9y.p, u = this._n4p, c = u.x, _ = u.y, d = u[ca], l = u.height;
+            //     f.horizontalPosition == nq ? r >= d ? (c += d, d = r - d || 1) : (c += r, d -= r) : f.horizontalPosition == sq && (-r >= d ? (d = -r - d || 1, c -= d) : d += r), f.verticalPosition == hq ? a >= l ? (_ += l, l = a - l || 1) : (_ += a, l -= a) : f[la] == aq && (-a >= l ? (l = -a - l || 1, _ -= l) : l += a), this._4p(c, _, d, l, t.shiftKey);
+            //     var h = new Wh(i, Wh[y$], t, this[YR]);
+            //     h.point = this._9y, i[RD](h)
+            // }
         }, enddrag: function (t, i) {
             if (this[YR] && this._9y) {
                 if (this._9y == this[i$]) {
@@ -9701,15 +9701,15 @@ window.Q = function (t, i, n) {
         destroy: function () {
             this[Z$] && (this[Z$] = null)
         }, onmousewheel: function (t, i) {
-            if (i.enableWheelZoom !== !1 && t[AB]) {
-                if (hH[xD](t), i[hB](), i.delayedRendering) {
-                    var n = this[Z$];
-                    n || (n = this.delayAction = new Uh(function () {
-                        i.pauseRendering(!1)
-                    })), i[oB](!0), n[Wd](100)
-                }
-                i[K$](t, t[AB], !1)
-            }
+            // if (i.enableWheelZoom !== !1 && t[AB]) {
+            //     if (hH[xD](t), i[hB](), i.delayedRendering) {
+            //         var n = this[Z$];
+            //         n || (n = this.delayAction = new Uh(function () {
+            //             i.pauseRendering(!1)
+            //         })), i[oB](!0), n[Wd](100)
+            //     }
+            //     i[K$](t, t[AB], !1)
+            // }
         }
     };
     var JW = function (t) {
