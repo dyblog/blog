@@ -8789,7 +8789,7 @@ window.Q = function (t, i, n) {
                 }
             }
         }, ondrag: function (t, i) {
-            this[lN](t, i)
+            // this[lN](t, i)
         }, enddrag: function (t, i) {
             if (this.start) {
                 var n = t.getData();
@@ -8801,12 +8801,12 @@ window.Q = function (t, i, n) {
         }, onrelease: function (t, i) {
             Rq(t) && this[sg](i)
         }, _n2e: null, onmousemove: function (t, i) {
-            var n = i[VT](t), e = Sh(i, n.x, n.y, function (t) {
-                return this._ix(t, i)
-            }[Pr](this));
-            e != this._n2e && (this._n2e = e, this[aN] = e ? new Ih(i[Wy](e)) : null, e ? (this.addDrawable(), this[XR] = [this._n4urrentPort]) : this[XR] = null, this[dT]());
-            var s;
-            this[aN] && (s = this._n4urrentPort.nearestPoint(n.x, n.y), this.invalidate()), this[rN] && (this[hN] = s || n, Rq(t) && this._d3(t, i))
+            // var n = i[VT](t), e = Sh(i, n.x, n.y, function (t) {
+            //     return this._ix(t, i)
+            // }[Pr](this));
+            // e != this._n2e && (this._n2e = e, this[aN] = e ? new Ih(i[Wy](e)) : null, e ? (this.addDrawable(), this[XR] = [this._n4urrentPort]) : this[XR] = null, this[dT]());
+            // var s;
+            // this[aN] && (s = this._n4urrentPort.nearestPoint(n.x, n.y), this.invalidate()), this[rN] && (this[hN] = s || n, Rq(t) && this._d3(t, i))
         }, toLogicalPoint: function (t) {
             return this[E_].toLogical(t)
         }, getDefaultDrawStyles: function () {
@@ -8875,7 +8875,7 @@ window.Q = function (t, i, n) {
             var n = i[VT](t);
             this._ey = n, this[io](n)
         }, onmousemove: function (t, i) {
-            this._ey && (this[hN] = i[VT](t))
+            // this._ey && (this[hN] = i[VT](t))
         }, ondblclick: function (t, i) {
             if (this._ey) {
                 if (this._ka[rr] < 3) return void this.destroy(i);
@@ -8913,7 +8913,7 @@ window.Q = function (t, i, n) {
             var n = t[Uy]();
             this.canLinkFrom(n, i) && (t[dN] = !0, this.start = n, i[zj] = gg, this[KR]())
         }, ondrag: function (t, i) {
-            this.start && (hH.stopEvent(t), this[hN] = i[VT](t), this[dT]())
+            // this.start && (hH.stopEvent(t), this[hN] = i[VT](t), this[dT]())
         }, enddrag: function (t, i) {
             if (this[rN]) {
                 this.invalidate();
@@ -9094,7 +9094,7 @@ window.Q = function (t, i, n) {
                 this.destroy(i)
             }
         }, onpinch: function (t, i) {
-            this[QN] && this.enddrag(t, i)
+            // this[QN] && this.enddrag(t, i)
         }, step: 1, onkeydown: function (t, i) {
             if (Ti(t)) {
                 var n, e;
@@ -9140,12 +9140,12 @@ window.Q = function (t, i, n) {
         }, startpinch: function (t, i) {
             i[oB](!0)
         }, onpinch: function (t, i) {
-            this._kp = !0;
-            var n = t.dScale;
-            if (n) {
-                var e = i[TD](t[Zb]);
-                i.zoomAt(n, e.x, e.y, !1)
-            }
+            // this._kp = !0;
+            // var n = t.dScale;
+            // if (n) {
+            //     var e = i[TD](t[Zb]);
+            //     i.zoomAt(n, e.x, e.y, !1)
+            // }
         }, endpinch: function (t, i) {
             i.pauseRendering(!1)
         }, destroy: function (t) {
@@ -9332,7 +9332,7 @@ window.Q = function (t, i, n) {
                 n[wB] = this._9y, i[RD](n)
             }
         }, onmousemove: function (t, i) {
-            this[YR] && (i.cursor = t[fw] && (this._fs(t, i) || this.element == t[Uy]()) ? "crosshair" : null)
+            // this[YR] && (i.cursor = t[fw] && (this._fs(t, i) || this.element == t[Uy]()) ? "crosshair" : null)
         }
     }, E($h, wh), HY[BB] = 1, HY[$B] = X(3724541951), HY.SELECTION_RECTANGLE_FILL_COLOR = X(1430753245), rH.RECTANGLE_SELECTION_MODE_INTERSECT = FB, rH[GB] = zB, HY[YB] = rH[qB];
     var WW = function (t) {
@@ -9356,7 +9356,7 @@ window.Q = function (t, i, n) {
                 i[RD](n)
             }
         }, onpinch: function (t, i) {
-            this._kp && this.enddrag(t, i)
+            // this._kp && this.enddrag(t, i)
         }, _11: function (t, i) {
             t[Ko] = HY[$B], t[tf] = HY[WB], t[Zo] = HY[BB] / i;
             var n = this._kp.x, e = this._kp.y;
@@ -9510,15 +9510,15 @@ window.Q = function (t, i, n) {
                 }, this), a
             }
         }, onmousemove: function (t, i) {
-            if (this[YR]) {
-                var n = this._fs(t, i);
-                if (!n) return void (i[zj] = null);
-                if (n != this[i$] && this[YR][Fo]) {
-                    var e = n[Fo] + this.element[Fo];
-                    return void (i[zj] = Yh(e))
-                }
-                i[zj] = n[zj]
-            }
+            // if (this[YR]) {
+            //     var n = this._fs(t, i);
+            //     if (!n) return void (i[zj] = null);
+            //     if (n != this[i$] && this[YR][Fo]) {
+            //         var e = n[Fo] + this.element[Fo];
+            //         return void (i[zj] = Yh(e))
+            //     }
+            //     i[zj] = n[zj]
+            // }
         }, startdrag: function (t, i) {
             if (this[YR] && (this.removeDrawable(), this._n4anEdit && (this._9y = this._fs(t, i), this._9y))) {
                 if (t[dN] = !0, this._9y == this[i$]) {
@@ -9680,16 +9680,16 @@ window.Q = function (t, i, n) {
         onstart: function (t, i) {
             this[sg](i)
         }, _ip: null, onmousemove: function (t, i) {
-            if (i[H$]) {
-                var n = t[Uy](), e = n ? i[U$](n, t) : null;
-                return e ? void qh.show({
-                    target: n,
-                    content: e,
-                    type: n[W$],
-                    x: t[ja],
-                    y: t[Na]
-                }, i[V$], i[X$]) : void qh.hide()
-            }
+            // if (i[H$]) {
+            //     var n = t[Uy](), e = n ? i[U$](n, t) : null;
+            //     return e ? void qh.show({
+            //         target: n,
+            //         content: e,
+            //         type: n[W$],
+            //         x: t[ja],
+            //         y: t[Na]
+            //     }, i[V$], i[X$]) : void qh.hide()
+            // }
         }, destroy: function () {
             qh[t$]()
         }
