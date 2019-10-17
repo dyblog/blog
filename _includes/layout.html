@@ -7,6 +7,7 @@
     </header>
     <div id="container">
         {% if page.layout == 'default' or page.layout == 'post' %}
+        <!-- 通过conent 取出页面内容,比如archives/index.html中通过{% include archives.html %} 导入的内容-->
             {{content}}
             {% assign item = page %}
             {% assign table = true %}
