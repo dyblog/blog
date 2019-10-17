@@ -1,7 +1,3 @@
-/**
- * This file is part of Qunee for HTML5.
- * Copyright (c) 2016 by qunee.com
- **/
 if(!window.getI18NString){getI18NString = function(s){return s;}}
 function HFlexEdgeUI(edge, graph){
     Q.doSuperConstructor(this, HFlexEdgeUI, arguments);
@@ -12,19 +8,19 @@ HFlexEdgeUI.prototype = {
         var to = toBounds.center;
         var cx = (from.x + to.x) / 2;
         var cy = (from.y + to.y) / 2;
-//        path.curveTo(from.x, cy, cx, to.y);
-//         path.curveTo(from.x, from.y, cx, to.y);
+       // path.curveTo(from.x, cy, cx, to.y);
+       //  path.curveTo(from.x, from.y, cx, to.y);
         path.quadTo(cx, to.y + 0.1);
     }
 }
 
 Q.extend(HFlexEdgeUI, Q.EdgeUI);
-window.HFlexEdgeUI = HFlexEdgeUI;
-Q.loadClassPath(HFlexEdgeUI, "HFlexEdgeUI");
+// window.HFlexEdgeUI = HFlexEdgeUI;
+// Q.loadClassPath(HFlexEdgeUI, "HFlexEdgeUI");
 
 var graph = new Q.Graph(canvas);
-graph.editable = true;
-graph.enableDoubleClickToOverview = false;
+graph.editable = false;
+graph.enableDoubleClickToOverview = true;
 
 function createEdge(name, from, to){
     var edge = graph.createEdge(name, from, to);
@@ -50,49 +46,26 @@ function createText(text, x, y){
     return node;
 }
 
-function localToGlobal(x, y, canvas){
-    x += window.pageXOffset;
-    y += window.pageYOffset;
-    var clientRect = canvas.getBoundingClientRect();
-    return {x: x + clientRect.left, y: y + clientRect.top};
-}
-
 var layouter = new Q.TreeLayouter(graph);
-layouter.isLayoutable = function(node, from){
-    return node == ROOT || node.host != null;
-}
+// layouter.isLayoutable = function(node, from){
+//     return node == ROOT || node.host != null;
+// }
 layouter.vGap = 20;
 
-graph.ondblclick = function(evt){
-    var element = graph.getElementByMouseEvent(evt);
-    if(element){
-        return;
+graph.onclick = function(evt) {
+    var target = graph.hitTest(evt);
+    if(target instanceof Q.LabelUI){
+        Q.log(target.data);
     }
-    var xy = graph.toLogical(evt);
-    var newItem = createText(getI18NString('New Project'), xy.x, xy.y);
-    graph.selectionModel.select(newItem);
 }
 
-graph.interactionDispatcher.addListener(function(evt){
-    if(evt.data == ROOT){
-        return;
+graph.ondblclick = function(evt){
+
+    var target = graph.hitTest(evt);
+    if(target instanceof Q.LabelUI){
+        Q.log(target.data);
     }
-    if(evt.kind == Q.InteractionEvent.ELEMENT_MOVING && evt.data){
-        var node = evt.data;
-        var host = findNearNode(node);
-        if(node.host == host){
-            return;
-        }
-        if(node.host){
-            unlinkToParent(node);
-        }
-        if(host){
-            linkToParent(node, host);
-        }
-    }else if(evt.kind == Q.InteractionEvent.ELEMENT_MOVE_END && evt.data){
-        layouter.doLayout();
-    }
-})
+}
 
 function atLeft(bounds1, bounds2){
     if(bounds1.right < bounds2.x){
@@ -152,7 +125,7 @@ function findNearNode(node){
 
 ///init datas
 var datas = {
-    name: '学习总览',
+    name: 'HTML',
     parentChildrenDirection: Q.Consts.DIRECTION_MIDDLE,
     layoutType: Q.Consts.LAYOUT_TYPE_TWO_SIDE,
     children: [
@@ -178,7 +151,7 @@ function createItem(data, parent, level){
         }
         return;
     }
-    var node = createText("<" + data.name + ">");
+    var node = createText( data.name);
     node.tooltipType = "text";
     node.data = data;
     level = level || 0;
@@ -210,7 +183,10 @@ var ROOT = createItem(datas);
 ROOT.setStyle(Q.Styles.LABEL_FONT_SIZE, 20);
 ROOT.setStyle(Q.Styles.LABEL_SIZE, new Q.Size(80, 60));
 
+//平移
 graph.callLater(function(){
     layouter.doLayout();
     graph.zoomToOverview();
 })
+
+$($(".Q-Canvas")[1]).hide();
