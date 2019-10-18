@@ -7740,7 +7740,7 @@ window.Q = function (t, i, n) {
         originAtCenter: !0,
         editable: !1,
         ondragover: function (t) {
-            hH[xD](t)
+            // hH[xD](t)
         },
         getDropInfo: function (t, i) {
             var n = null;
@@ -8480,9 +8480,9 @@ window.Q = function (t, i, n) {
         }
     };
     var $W = 10;
-    pi(dR, lR), pi(vR, "background-color: #7E7E7E;" + Oq(rR) + ": background-color 0.2s linear;"), pi(".Q-Graph-ScrollBar--V", "width: 8px;right: 0px;"), pi(".Q-Graph-ScrollBar--H", "height: 8px;bottom: 0px;"), pi(".Q-Graph-ScrollBar--V.Both", bR), pi(".Q-Graph-ScrollBar--H.Both", yR), YY || (pi(gR, hR + Oq(rR) + pR), pi(".Q-Graph:hover .Q-Graph-ScrollPane", fR + Oq(rR) + ":opacity 0.3s linear;")), gh[yr] = {
+    pi(dR, lR), pi(vR, "background-color: #7E7E7E;" + Oq(rR) + ": background-color 0.2s linear;"), pi(".Q-Graph-ScrollBar--V", "width: 8px;right: 0px;overflow: hidden;"), pi(".Q-Graph-ScrollBar--H", "height: 8px;bottom: 0px;overflow: hidden;"), pi(".Q-Graph-ScrollBar--V.Both", bR), pi(".Q-Graph-ScrollBar--H.Both", yR), YY || (pi(gR, hR + Oq(rR) + pR), pi(".Q-Graph:hover .Q-Graph-ScrollPane", fR + Oq(rR) + ":opacity 0.3s linear;")), gh[yr] = {
         _ih: function () {
-            this[mR]._ih(), this._horizontalDragSupport._ih(), delete this._verticalDragSupport, delete this[xR], this._m9[rm] && this._m9[rm][ab](this._m9)
+            this[mR]._ih(),/** this._horizontalDragSupport._ih(), delete this._verticalDragSupport,**/ delete this[xR], this._m9[rm] && this._m9[rm][ab](this._m9)
         }, _m9: null, _n66: null, _7p: null, init: function (t) {
             var n = i.createElement(N_);
             n.className = ER, bi(n, {width: J_, height: J_, position: Z_});
@@ -8505,17 +8505,17 @@ window.Q = function (t, i, n) {
                     //     }
                     // }
                 }, enddrag: function (t, i) {
-                    var n = h[Fu]._km;
-                    if (n && n[wR]) {
-                        var e = i.isH, s = e ? t.vx : t.vy;
-                        if (Math.abs(s) > .1) {
-                            var r = n[nf] / i[nf];
-                            s *= r, e ? n._9u(-s, 0) : n._9u(0, -s)
-                        }
-                    }
+                    // var n = h[Fu]._km;
+                    // if (n && n[wR]) {
+                    //     var e = i.isH, s = e ? t.vx : t.vy;
+                    //     if (Math.abs(s) > .1) {
+                    //         var r = n[nf] / i[nf];
+                    //         s *= r, e ? n._9u(-s, 0) : n._9u(0, -s)
+                    //     }
+                    // }
                 }
             };
-            this[mR] = new wi(e, r), this._horizontalDragSupport = new wi(s, r)
+            this[mR] = new wi(e, r)//, this._horizontalDragSupport = new wi(s, r)
         }, _3p: function () {
             var t = this[Fu]._km;
             t && t.callLater(this._k3.bind(this))
@@ -8780,24 +8780,24 @@ window.Q = function (t, i, n) {
                 return this._ez(n, i) ? void this[uN](t, i, n, new Ih(i[Wy](n))[cN](e.x, e.y)[oD]) : void this[io](e)
             }
         }, startdrag: function (t, i) {
-            if (!this.start && !t.responded) {
-                var n = t[Uy]();
-                if (n && this[_N](n, i)) {
-                    t[dN] = !0, this[rN] = n;
-                    var e = i[VT](t), s = this._n25(n, i, e.x, e.y);
-                    this.startPort = s.port, this.addPoint(s)
-                }
-            }
+            // if (!this.start && !t.responded) {
+            //     var n = t[Uy]();
+            //     if (n && this[_N](n, i)) {
+            //         t[dN] = !0, this[rN] = n;
+            //         var e = i[VT](t), s = this._n25(n, i, e.x, e.y);
+            //         this.startPort = s.port, this.addPoint(s)
+            //     }
+            // }
         }, ondrag: function (t, i) {
             // this[lN](t, i)
         }, enddrag: function (t, i) {
-            if (this.start) {
-                var n = t.getData();
-                if (this._ez(n, i)) {
-                    var e = i[VT](t);
-                    this.finish(t, i, n, new Ih(i[Wy](n)).nearestPoint(e.x, e.y).port)
-                }
-            }
+            // if (this.start) {
+            //     var n = t.getData();
+            //     if (this._ez(n, i)) {
+            //         var e = i[VT](t);
+            //         this.finish(t, i, n, new Ih(i[Wy](n)).nearestPoint(e.x, e.y).port)
+            //     }
+            // }
         }, onrelease: function (t, i) {
             Rq(t) && this[sg](i)
         }, _n2e: null, onmousemove: function (t, i) {
@@ -8910,16 +8910,16 @@ window.Q = function (t, i, n) {
         }, canLinkTo: function (t, i) {
             return t instanceof _W && i[YD](t, this.start)
         }, startdrag: function (t, i) {
-            var n = t[Uy]();
-            this.canLinkFrom(n, i) && (t[dN] = !0, this.start = n, i[zj] = gg, this[KR]())
+            // var n = t[Uy]();
+            // this.canLinkFrom(n, i) && (t[dN] = !0, this.start = n, i[zj] = gg, this[KR]())
         }, ondrag: function (t, i) {
             // this.start && (hH.stopEvent(t), this[hN] = i[VT](t), this[dT]())
         }, enddrag: function (t, i) {
-            if (this[rN]) {
-                this.invalidate();
-                var n = t.getData();
-                this[YD](n, i) && i[fN](this[rN], n, t), this[sg](i)
-            }
+            // if (this[rN]) {
+            //     this.invalidate();
+            //     var n = t.getData();
+            //     this[YD](n, i) && i[fN](this[rN], n, t), this[sg](i)
+            // }
         }, getDefaultDrawStyles: function () {
             return {
                 lineWidth: this[E_][UD](gW[VI]),
@@ -9046,13 +9046,13 @@ window.Q = function (t, i, n) {
         }, onstart: function (t, i) {
             this[QN] && this[sg](i)
         }, startdrag: function (t, i) {
-            if (!(t.responded || t[ia] && 1 != t.touches[rr])) {
-                var n = t[Uy]();
-                if (!n || !i[tB](n) || !i[lj](n)) return void this.destroy(i);
-                t[dN] = !0, this[QN] = n, this.draggingElements = this._24(i);
-                var e = new Wh(i, Wh[iB], t, this[QN], this[JN][Zd]);
-                return i.beforeInteractionEvent(e) === !1 ? void this[sg](i) : void i.onInteractionEvent(e)
-            }
+            // if (!(t.responded || t[ia] && 1 != t.touches[rr])) {
+            //     var n = t[Uy]();
+            //     if (!n || !i[tB](n) || !i[lj](n)) return void this.destroy(i);
+            //     t[dN] = !0, this[QN] = n, this.draggingElements = this._24(i);
+            //     var e = new Wh(i, Wh[iB], t, this[QN], this[JN][Zd]);
+            //     return i.beforeInteractionEvent(e) === !1 ? void this[sg](i) : void i.onInteractionEvent(e)
+            // }
         }, ondrag: function (t, i) {
             // if (this[QN]) {
             //     if (t[ia] && 1 != t.touches[rr]) return void this.enddrag(t, i);
@@ -9063,36 +9063,36 @@ window.Q = function (t, i, n) {
             //     i[eB](this.draggingElements.datas, n, e), i[RD](h)
             // }
         }, enddrag: function (t, i) {
-            if (this[QN]) {
-                if (this[JN] && this.draggingElements.length) {
-                    if (t[ow]) {
-                        var n, e = i[VT](t), s = e.x, h = e.y;
-                        i[Ed](function (t) {
-                            var i = t.data;
-                            if (!this[JN][I_](i) && t[wd].intersectsPoint(s - t.x, h - t.y) && t[P_](s, h, 1)) {
-                                if (i instanceof hH.Edge) {
-                                    if (!i[Ik]) return;
-                                    for (var e = this[JN].length; e-- > 0;) {
-                                        var r = this[JN].get(e);
-                                        if (r instanceof hH[MD] && r.linkedWith(i)) return
-                                    }
-                                    return n = i, !1
-                                }
-                                return (i[Ik] || i._i4() && i[Ak]) && (n = i), !1
-                            }
-                        }, this), n && this[JN][qu](function (t) {
-                            for (var i = t.parent; i;) {
-                                if (this[JN][I_](i)) return;
-                                i = i[Hu]
-                            }
-                            t[Hu] = n
-                        }, this)
-                    }
-                    var r = new Wh(i, Wh[sB], t, this[QN], this[JN][Zd]);
-                    i.onInteractionEvent(r)
-                }
-                this.destroy(i)
-            }
+            // if (this[QN]) {
+            //     if (this[JN] && this.draggingElements.length) {
+            //         if (t[ow]) {
+            //             var n, e = i[VT](t), s = e.x, h = e.y;
+            //             i[Ed](function (t) {
+            //                 var i = t.data;
+            //                 if (!this[JN][I_](i) && t[wd].intersectsPoint(s - t.x, h - t.y) && t[P_](s, h, 1)) {
+            //                     if (i instanceof hH.Edge) {
+            //                         if (!i[Ik]) return;
+            //                         for (var e = this[JN].length; e-- > 0;) {
+            //                             var r = this[JN].get(e);
+            //                             if (r instanceof hH[MD] && r.linkedWith(i)) return
+            //                         }
+            //                         return n = i, !1
+            //                     }
+            //                     return (i[Ik] || i._i4() && i[Ak]) && (n = i), !1
+            //                 }
+            //             }, this), n && this[JN][qu](function (t) {
+            //                 for (var i = t.parent; i;) {
+            //                     if (this[JN][I_](i)) return;
+            //                     i = i[Hu]
+            //                 }
+            //                 t[Hu] = n
+            //             }, this)
+            //         }
+            //         var r = new Wh(i, Wh[sB], t, this[QN], this[JN][Zd]);
+            //         i.onInteractionEvent(r)
+            //     }
+            //     this.destroy(i)
+            // }
         }, onpinch: function (t, i) {
             // this[QN] && this.enddrag(t, i)
         }, step: 1, onkeydown: function (t, i) {
@@ -9120,25 +9120,25 @@ window.Q = function (t, i, n) {
         }, onstart: function (t, i) {
             this._kp && this[sg](i)
         }, _kp: !1, startdrag: function (t, i) {
-            if (!t[dN]) {
-                i[hB](), t[dN] = !0, this._kp = !0, i.cursor = Xq;
-                var n = new Wh(i, Wh[rB], t);
-                i[RD](n)
-            }
+            // if (!t[dN]) {
+            //     i[hB](), t[dN] = !0, this._kp = !0, i.cursor = Xq;
+            //     var n = new Wh(i, Wh[rB], t);
+            //     i[RD](n)
+            // }
         }, ondrag: function (t, i) {
             // this._kp && i.translate(t.dx || 0, t.dy || 0)
         }, enddrag: function (t, i) {
-            if (this._kp) {
-                if (i[wR] !== !1) {
-                    var n = t.vx, e = t.vy;
-                    (Math.abs(n) > .1 || Math.abs(e) > .1) && i._9u(n, e)
-                }
-                this[sg](i);
-                var s = new Wh(i, Wh[aB], t);
-                i[RD](s)
-            }
+            // if (this._kp) {
+            //     if (i[wR] !== !1) {
+            //         var n = t.vx, e = t.vy;
+            //         (Math.abs(n) > .1 || Math.abs(e) > .1) && i._9u(n, e)
+            //     }
+            //     this[sg](i);
+            //     var s = new Wh(i, Wh[aB], t);
+            //     i[RD](s)
+            // }
         }, startpinch: function (t, i) {
-            i[oB](!0)
+            // i[oB](!0)
         }, onpinch: function (t, i) {
             // this._kp = !0;
             // var n = t.dScale;
@@ -9147,7 +9147,7 @@ window.Q = function (t, i, n) {
             //     i.zoomAt(n, e.x, e.y, !1)
             // }
         }, endpinch: function (t, i) {
-            i.pauseRendering(!1)
+            // i.pauseRendering(!1)
         }, destroy: function (t) {
             this._kp = !1, t[zj] = null
         }
@@ -9278,11 +9278,11 @@ window.Q = function (t, i, n) {
         }, _75: function (t, i) {
             return i == t[Co][rr] - 2
         }, startdrag: function (t, i) {
-            if (this[YR] && this[uB] && (this._9y = this._fs(t, i), this._9y)) {
-                this[VR](), t.responded = !0;
-                var n = new Wh(i, Wh.POINT_MOVE_START, t, this.element);
-                n[wB] = this._9y, i.onInteractionEvent(n)
-            }
+            // if (this[YR] && this[uB] && (this._9y = this._fs(t, i), this._9y)) {
+            //     this[VR](), t.responded = !0;
+            //     var n = new Wh(i, Wh.POINT_MOVE_START, t, this.element);
+            //     n[wB] = this._9y, i.onInteractionEvent(n)
+            // }
         }, onkeyup: function (t, i) {
             this._mousePressed && 16 != !t.keyCode && this.element && this._9y && this._9y.delta && this[PB](this._9y[AB].x, this._9y[AB].y, i, t, !1)
         }, onkeydown: function (t, i) {
@@ -9326,11 +9326,11 @@ window.Q = function (t, i, n) {
             //     n[AB] = {x: s, y: h}, this[PB](s, h, i, t, t.shiftKey)
             // }
         }, enddrag: function (t, i) {
-            if (this.element && this._9y) {
-                this[KR](), this._k3();
-                var n = new Wh(i, Wh[NB], t, this[YR]);
-                n[wB] = this._9y, i[RD](n)
-            }
+            // if (this.element && this._9y) {
+            //     this[KR](), this._k3();
+            //     var n = new Wh(i, Wh[NB], t, this[YR]);
+            //     n[wB] = this._9y, i[RD](n)
+            // }
         }, onmousemove: function (t, i) {
             // this[YR] && (i.cursor = t[fw] && (this._fs(t, i) || this.element == t[Uy]()) ? "crosshair" : null)
         }
@@ -9342,7 +9342,7 @@ window.Q = function (t, i, n) {
         onstart: function (t, i) {
             this._kp && this[sg](i)
         }, startdrag: function (t, i) {
-            t.responded || (t[dN] = !0, this._kp = i[VT](t), i.cursor = gg, this._11Id = this[pd][KR](this._11, this).id)
+            // t.responded || (t[dN] = !0, this._kp = i[VT](t), i.cursor = gg, this._11Id = this[pd][KR](this._11, this).id)
         }, ondrag: function (t, i) {
             // if (this._kp) {
             //     z(t), this[HB] = i.toLogical(t), this.invalidate();
@@ -9350,11 +9350,11 @@ window.Q = function (t, i, n) {
             //     i[RD](n)
             // }
         }, enddrag: function (t, i) {
-            if (this._kp) {
-                this[UB] && (clearTimeout(this[UB]), this[UB] = null), this._fu(!0), this.destroy(i);
-                var n = new Wh(i, Wh.SELECT_END, t, i[_b]);
-                i[RD](n)
-            }
+            // if (this._kp) {
+            //     this[UB] && (clearTimeout(this[UB]), this[UB] = null), this._fu(!0), this.destroy(i);
+            //     var n = new Wh(i, Wh.SELECT_END, t, i[_b]);
+            //     i[RD](n)
+            // }
         }, onpinch: function (t, i) {
             // this._kp && this.enddrag(t, i)
         }, _11: function (t, i) {
@@ -9520,15 +9520,15 @@ window.Q = function (t, i, n) {
             //     i[zj] = n[zj]
             // }
         }, startdrag: function (t, i) {
-            if (this[YR] && (this.removeDrawable(), this._n4anEdit && (this._9y = this._fs(t, i), this._9y))) {
-                if (t[dN] = !0, this._9y == this[i$]) {
-                    this._9y.start = i[VT](t), this._9y.rotate = this.element[Fo] || 0;
-                    var n = new Wh(i, Wh[l$], t, this.element);
-                    return n[Or] = this.element[Fo], void i[RD](n)
-                }
-                var n = new Wh(i, Wh[v$], t, this[YR]);
-                n[wB] = this._9y, i.onInteractionEvent(n)
-            }
+            // if (this[YR] && (this.removeDrawable(), this._n4anEdit && (this._9y = this._fs(t, i), this._9y))) {
+            //     if (t[dN] = !0, this._9y == this[i$]) {
+            //         this._9y.start = i[VT](t), this._9y.rotate = this.element[Fo] || 0;
+            //         var n = new Wh(i, Wh[l$], t, this.element);
+            //         return n[Or] = this.element[Fo], void i[RD](n)
+            //     }
+            //     var n = new Wh(i, Wh[v$], t, this[YR]);
+            //     n[wB] = this._9y, i.onInteractionEvent(n)
+            // }
         }, _7d: function (t, i, n, e, s, h) {
             var r = this._n4p, a = r.x, o = r.y, f = r[ca], u = r[_a];
             if (h) {
@@ -9592,14 +9592,14 @@ window.Q = function (t, i, n) {
             //     h.point = this._9y, i[RD](h)
             // }
         }, enddrag: function (t, i) {
-            if (this[YR] && this._9y) {
-                if (this._9y == this[i$]) {
-                    var n = new Wh(i, Wh[g$], t, this[YR]);
-                    return n[Or] = this[YR][Fo], void i[RD](n)
-                }
-                var n = new Wh(i, Wh[p$], t, this[YR]);
-                n[wB] = this._9y, i[RD](n)
-            }
+            // if (this[YR] && this._9y) {
+            //     if (this._9y == this[i$]) {
+            //         var n = new Wh(i, Wh[g$], t, this[YR]);
+            //         return n[Or] = this[YR][Fo], void i[RD](n)
+            //     }
+            //     var n = new Wh(i, Wh[p$], t, this[YR]);
+            //     n[wB] = this._9y, i[RD](n)
+            // }
         }
     }, E(Gh, wh), hH[m$] = Gh;
     var XW = function (t) {
