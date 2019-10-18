@@ -1,3 +1,8 @@
+var map = {
+    "容器":"container",
+    "java":"java"
+}
+
 if(!window.getI18NString){getI18NString = function(s){return s;}}
 function HFlexEdgeUI(edge, graph){
     Q.doSuperConstructor(this, HFlexEdgeUI, arguments);
@@ -8,8 +13,8 @@ HFlexEdgeUI.prototype = {
         var to = toBounds.center;
         var cx = (from.x + to.x) / 2;
         var cy = (from.y + to.y) / 2;
-       // path.curveTo(from.x, cy, cx, to.y);
-       //  path.curveTo(from.x, from.y, cx, to.y);
+        // path.curveTo(from.x, cy, cx, to.y);
+        //  path.curveTo(from.x, from.y, cx, to.y);
         path.quadTo(cx, to.y + 0.1);
     }
 }
@@ -56,6 +61,12 @@ graph.onclick = function(evt) {
     var target = graph.hitTest(evt);
     if(target instanceof Q.LabelUI){
         Q.log(target.data);
+        for(var name in map){
+            if( name == target.data){
+                window.location.href="./"+map[name]
+            }
+        }
+
     }
 }
 
@@ -123,24 +134,7 @@ function findNearNode(node){
     return nearNode;
 }
 
-///init datas
-var datas = {
-    name: 'HTML',
-    parentChildrenDirection: Q.Consts.DIRECTION_MIDDLE,
-    layoutType: Q.Consts.LAYOUT_TYPE_TWO_SIDE,
-    children: [
-        {name: 'svg', children: [{name: 'text'}, {name: 'rect'}, {name: 'g'}]},
-        {name: 'head'},
-        {name: 'div'},
-        {name: 'p'},
-        {name: 'table'},
-        {name: 'li'},
-        {name: 'frame'},
-        {name: 'form', children: [{name: 'button'}, {name: 'textarea'}, {name: 'input'}]},
-        {name: 'canvas'},
-        {name: getI18NString('Double click Edit')}
-    ]
-}
+
 
 function createItem(data, parent, level){
     if(Q.isArray(data)){

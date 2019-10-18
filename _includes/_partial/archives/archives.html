@@ -1,0 +1,360 @@
+
+<div id="study" align="center" style="width:100%;height:100%">
+<div style="height: 500px;overflow: hidden" id="canvas"></div>
+</div>
+
+
+
+<script src="{{ site.baseurl }}{{ site.assets }}/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}{{ site.assets }}/js/graph/qunee-min.js?v=2.6.2"></script>
+<script>
+
+    ///init datas
+    var datas = {
+        name: '技能图谱',
+        parentChildrenDirection: Q.Consts.DIRECTION_MIDDLE,
+        layoutType: Q.Consts.LAYOUT_TYPE_TWO_SIDE,
+        children: [
+            {name: 'java', children: [{name: 'text'}, {name: 'rect'}, {name: 'g'}]},
+            {name: 'Spring家族'},
+            {name: '数据库'},
+            {name: '大数据'},
+            {name: '容器'},
+            {name: '设计模式'},
+            {name: '网络框架'},
+            {name: '服务器', children: [{name: 'button'}, {name: 'textarea'}, {name: 'input'}]},
+            {name: 'MQ和RPC'},
+            {name: '算法'},
+            {name: '前端'}
+        ]
+    }
+
+
+
+</script>
+
+<script src="{{ site.baseurl }}{{ site.assets }}/js/graph/xmind/xmind.js"></script>
+
+
+
+<!--&lt;!&ndash;学习计划表格&ndash;&gt;-->
+
+<!--&lt;!&ndash; JAVA &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="JAVA" itemprop="url" target="_self">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">JAVA</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="/categories/juc" title="juc" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">JUC</time>-->
+        <!--<h1 itemprop="name"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="java集合" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Java集合</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="API 网关" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="API 网关" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; Spring &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Spring</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="SpringBoot" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">SpringBoot</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring WebMvc" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Spring WebMvc</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring Cloud" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Spring Cloud</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; 网络框架 &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="网络框架" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">网络框架</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Netty" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">netty</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; 网络框架 &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="服务器" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">服务器</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Tomcat" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Tomcat</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Jetty</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; MQ和RPC &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="MQ和RPC" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">MQ和RPC</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Dubbo" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Dubbo</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="RabbitMQ" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">RabbitMQ</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; 数据库 &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="数据库" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">数据库</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Mybatis" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Mybatis</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="JSqlParse" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">JSqlParse</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; 大数据 &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="大数据" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">大数据</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Kafka" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Kafka</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Flink" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Flink</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Hadoop" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Hadoop</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; DevOps &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="DevOps" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">DevOps</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Selenium" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Selenium</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Jenkins" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Jenkins</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Docker" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Docker</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="k8s" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">k8s</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; 算法 &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="算法" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">算法</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="数据结构" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">数据结构</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="基础算法" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">基础算法</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="高级算法" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">高级算法</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Spring家族" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; 前端框架 &ndash;&gt;-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="前端框架" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished" style="display:none"></time>-->
+        <!--<h1 itemprop="name">前端框架</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="React" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">React</time>-->
+        <!--<h1 itemprop="name" style="display:none"></h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="Vue" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">Vue</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
+<!--<section class="blogPost" itemscope itemprop="blogitem">-->
+    <!--<a href="#" title="" itemprop="url" target="_blank">-->
+        <!--<time itemprop="datePublished">&nbsp;</time>-->
+        <!--<h1 itemprop="name" style="display:none">Spring</h1>-->
+    <!--</a>-->
+<!--</section>-->
