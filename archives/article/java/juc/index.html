@@ -1,0 +1,17 @@
+---
+layout: default
+type: archives
+---
+<div id="main">
+    {% for post in site.posts %}
+    {% assign item = post %}
+    {% assign index = true %}
+    {% assign desc = true %}
+    {% if item.category == 'juc' %}
+
+        {% include archives/article.html %}
+
+    {% endif %}
+
+    {% endfor %}
+</div>

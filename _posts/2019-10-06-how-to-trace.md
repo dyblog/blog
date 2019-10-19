@@ -1,5 +1,6 @@
 ---
 layout: post
+category: trace
 date: 2019-10-06
 title: 动手实现分布式用户行为日志收集与分析
 description: 本篇文章主要介绍本人在工作中是如何采用Spring AOP + Mybatis 拦截器 + Dubbo filter + ThreadLocal 实现类似于APM分布式链路跟踪的方式来实现分布式服务下用户行为及数据前后变更日志收集与审计分析。

@@ -2706,7 +2706,7 @@ article .article-content img.emoji {
     background: #fafafa;
     margin-bottom: .125em;
     float: left;
-    width: 20%;
+    width: 100%;
     border-bottom: .124em solid #ccc;
 }
 
@@ -2730,10 +2730,10 @@ article .article-content img.emoji {
 
     #main section.blogPost {
         background: #fafafa;
-        margin-bottom: .125em;
+        margin-bottom: .1em;
         float: left;
-        width: 20%;
-        border-bottom: .124em solid #ccc;
+        width: 100%;
+        border-bottom: .1em solid #ccc;
     }
 }
 

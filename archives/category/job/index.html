@@ -1,0 +1,39 @@
+---
+layout: default
+type: archives
+---
+
+
+<script type="text/javascript" src="{{ site.baseurl }}{{ site.assets }}/js/graph/qunee-min.js?v=2.6.2"></script>
+{% include archives/data.html %}
+
+<div id="main">
+    <div id="study" style="width:100%;height:100%">
+    <div style="height: 500px;overflow: hidden" id="canvas"></div>
+    </div>
+    <script>
+        ///init datas
+        var datas = {
+            name: '任务调度',
+            parentChildrenDirection:Q.Consts.DIRECTION_MIDDLE,
+            layoutType: Q.Consts.LAYOUT_TYPE_TWO_SIDE,
+            children:[{name:"quartz"},{name:"elastic-job"},{name:"xxl-job"}]
+        }
+
+    </script>
+
+    <script src="{{ site.baseurl }}{{ site.assets }}/js/graph/xmind/xmind.js"></script>
+    <script>
+        graph.onclick = function(evt) {
+            var target = graph.hitTest(evt);
+            if(target instanceof Q.LabelUI){
+                Q.log(target.data);
+                for(var name in map){
+                    if( name == target.data){
+                        window.location.href = map[name];
+                    }
+                }
+            }
+        }
+    </script>
+</div>
