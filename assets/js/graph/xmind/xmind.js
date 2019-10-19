@@ -1,8 +1,3 @@
-var map = {
-    "容器":"container",
-    "java":"java"
-}
-
 if(!window.getI18NString){getI18NString = function(s){return s;}}
 function HFlexEdgeUI(edge, graph){
     Q.doSuperConstructor(this, HFlexEdgeUI, arguments);
@@ -63,10 +58,10 @@ graph.onclick = function(evt) {
         Q.log(target.data);
         for(var name in map){
             if( name == target.data){
-                window.location.href="./"+map[name]
+                window.localStorage.setItem('currentData',map[name]);
+                window.location.href="/archives";
             }
         }
-
     }
 }
 

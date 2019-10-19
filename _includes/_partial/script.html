@@ -302,3 +302,13 @@ $(document).ready(function(){
 {% include _partial/mathjax.html %}
 <!-- MathJax End -->
 
+<script src="{{ site.baseurl }}{{ site.assets }}/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}{{ site.assets }}/js/graph/qunee-min.js?v=2.6.2"></script>
+
+<script>
+    datas.parentChildrenDirection = Q.Consts.DIRECTION_MIDDLE;
+    datas.layoutType = Q.Consts.LAYOUT_TYPE_TWO_SIDE;
+    window.localStorage.removeItem("currentData");
+</script>
+
+<script src="{{ site.baseurl }}{{ site.assets }}/js/graph/xmind/xmind.js"></script>
