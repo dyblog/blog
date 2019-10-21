@@ -33,8 +33,43 @@ description: 本篇文章主要介绍本人在工作中是如何采用Spring AOP
   >- 客户端主要是负责对目标方法的链路开启,以及用户数据变更操作的收集及将收集的数据回传给服务端进行治理
   >- 服务端主要保存客户端收集的数据及对收集的数据进行治理,并提供相关的API进行治理后数据的查询
   >- 业务端只需引入客户端的jar包依赖即可开启对用户行为日志操作数据收集
-  
-如何开启链路？
+
+![](http://www.raoshihong.com/assets/img/trace/2019-10-21_23-30-33.png)
+
+## 业务端使用客户端
+
+业务端需要使用到客户端的地方只有三个部分：
+
+- 引入客户端依赖
+````
+<dependency>
+    <groupId>com.daoyuan</groupId>
+    <artifactId>trace-client</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+
+````
+
+二 添加客户端包组件扫描路径
+
+````
+@Configuration
+@ComponentScan(basePackages = {"com.daoyuan.trace.client"})
+public class CoreConfig {
+}
+
+````
+
+三 添加各业务端自定义用户（这部分可有可无）
+
+- 业务端自定义类实现客户端提供的`GetTraceUserService`接口
+
+
+### 客户端对业务端日志收集对实现
+如何实现链路开启
+通过Spring AOP 定义一个切面，对指定对方法进行拦截
+
+
 
 如何跨服务或者跨线程传递链路？
 
