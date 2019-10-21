@@ -25,7 +25,7 @@ description: 本篇文章主要介绍本人在工作中是如何采用Spring AOP
 
 ## 思路及设计
 在这画一个思维导图
-![](http://www.raoshihong.com/assets/img/trace/2019-10-16_184711.png)
+![](http://www.raoshihong.com/assets/img/trace/2019-10-21_111144.png)
 
 根据
 项目分为服务端和客户端，业务的只需引入客户端的包依赖，客户端即可开启链路并收集业务端的
