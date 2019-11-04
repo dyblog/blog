@@ -5147,10 +5147,7 @@ window.Q = function (t, i, n) {
         }, points: null, type: RH, clone: function () {
             return new GH(this.type, this[Co] ? y(this.points) : null)
         }, move: function (t, i) {
-            if (this.points) for (var n = 0, e = this[Co][rr]; e > n; n++) {
-                var s = this[Co][n];
-                hH[qm](s) && (this.points[n] += n % 2 == 0 ? t : i)
-            }
+
         }
     }, K(GH[yr], {
         lastPoint: {
@@ -7740,7 +7737,6 @@ window.Q = function (t, i, n) {
         originAtCenter: !0,
         editable: !1,
         ondragover: function (t) {
-            hH[xD](t)
         },
         getDropInfo: function (t, i) {
             var n = null;
@@ -8498,14 +8494,7 @@ window.Q = function (t, i, n) {
                 }, ondrag: function (t, i) {
 
                 }, enddrag: function (t, i) {
-                    var n = h[Fu]._km;
-                    if (n && n[wR]) {
-                        var e = i.isH, s = e ? t.vx : t.vy;
-                        if (Math.abs(s) > .1) {
-                            var r = n[nf] / i[nf];
-                            s *= r, e ? n._9u(-s, 0) : n._9u(0, -s)
-                        }
-                    }
+
                 }
             };
             this[mR] = new wi(e, r), this._horizontalDragSupport = new wi(s, r)
@@ -8773,23 +8762,10 @@ window.Q = function (t, i, n) {
                 return this._ez(n, i) ? void this[uN](t, i, n, new Ih(i[Wy](n))[cN](e.x, e.y)[oD]) : void this[io](e)
             }
         }, startdrag: function (t, i) {
-            if (!this.start && !t.responded) {
-                var n = t[Uy]();
-                if (n && this[_N](n, i)) {
-                    t[dN] = !0, this[rN] = n;
-                    var e = i[VT](t), s = this._n25(n, i, e.x, e.y);
-                    this.startPort = s.port, this.addPoint(s)
-                }
-            }
+
         }, ondrag: function (t, i) {
         }, enddrag: function (t, i) {
-            if (this.start) {
-                var n = t.getData();
-                if (this._ez(n, i)) {
-                    var e = i[VT](t);
-                    this.finish(t, i, n, new Ih(i[Wy](n)).nearestPoint(e.x, e.y).port)
-                }
-            }
+
         }, onrelease: function (t, i) {
             Rq(t) && this[sg](i)
         }, _n2e: null, onmousemove: function (t, i) {
@@ -8854,7 +8830,6 @@ window.Q = function (t, i, n) {
                 }), this[ro](t, r, e, s), this[sg](i)
             }
         }, startdrag: function (t) {
-            t[dN] = !0
         }, createElement: function (t, i, n, e) {
             return this[E_][mN](t, i, n, e)
         }, onstart: function (t, i) {
@@ -8900,11 +8875,7 @@ window.Q = function (t, i, n) {
         }, ondrag: function (t, i) {
 
         }, enddrag: function (t, i) {
-            if (this[rN]) {
-                this.invalidate();
-                var n = t.getData();
-                this[YD](n, i) && i[fN](this[rN], n, t), this[sg](i)
-            }
+
         }, getDefaultDrawStyles: function () {
             return {
                 lineWidth: this[E_][UD](gW[VI]),
@@ -9031,46 +9002,10 @@ window.Q = function (t, i, n) {
         }, onstart: function (t, i) {
             this[QN] && this[sg](i)
         }, startdrag: function (t, i) {
-            if (!(t.responded || t[ia] && 1 != t.touches[rr])) {
-                var n = t[Uy]();
-                if (!n || !i[tB](n) || !i[lj](n)) return void this.destroy(i);
-                t[dN] = !0, this[QN] = n, this.draggingElements = this._24(i);
-                var e = new Wh(i, Wh[iB], t, this[QN], this[JN][Zd]);
-                return i.beforeInteractionEvent(e) === !1 ? void this[sg](i) : void i.onInteractionEvent(e)
-            }
+
         }, ondrag: function (t, i) {
 
         }, enddrag: function (t, i) {
-            if (this[QN]) {
-                if (this[JN] && this.draggingElements.length) {
-                    if (t[ow]) {
-                        var n, e = i[VT](t), s = e.x, h = e.y;
-                        i[Ed](function (t) {
-                            var i = t.data;
-                            if (!this[JN][I_](i) && t[wd].intersectsPoint(s - t.x, h - t.y) && t[P_](s, h, 1)) {
-                                if (i instanceof hH.Edge) {
-                                    if (!i[Ik]) return;
-                                    for (var e = this[JN].length; e-- > 0;) {
-                                        var r = this[JN].get(e);
-                                        if (r instanceof hH[MD] && r.linkedWith(i)) return
-                                    }
-                                    return n = i, !1
-                                }
-                                return (i[Ik] || i._i4() && i[Ak]) && (n = i), !1
-                            }
-                        }, this), n && this[JN][qu](function (t) {
-                            for (var i = t.parent; i;) {
-                                if (this[JN][I_](i)) return;
-                                i = i[Hu]
-                            }
-                            t[Hu] = n
-                        }, this)
-                    }
-                    var r = new Wh(i, Wh[sB], t, this[QN], this[JN][Zd]);
-                    i.onInteractionEvent(r)
-                }
-                this.destroy(i)
-            }
         }, onpinch: function (t, i) {
         }, step: 1, onkeydown: function (t, i) {
             if (Ti(t)) {
@@ -9097,22 +9032,10 @@ window.Q = function (t, i, n) {
         }, onstart: function (t, i) {
             this._kp && this[sg](i)
         }, _kp: !1, startdrag: function (t, i) {
-            if (!t[dN]) {
-                i[hB](), t[dN] = !0, this._kp = !0, i.cursor = Xq;
-                var n = new Wh(i, Wh[rB], t);
-                i[RD](n)
-            }
+
         }, ondrag: function (t, i) {
         }, enddrag: function (t, i) {
-            if (this._kp) {
-                if (i[wR] !== !1) {
-                    var n = t.vx, e = t.vy;
-                    (Math.abs(n) > .1 || Math.abs(e) > .1) && i._9u(n, e)
-                }
-                this[sg](i);
-                var s = new Wh(i, Wh[aB], t);
-                i[RD](s)
-            }
+
         }, startpinch: function (t, i) {
             i[oB](!0)
         }, onpinch: function (t, i) {
@@ -9249,11 +9172,7 @@ window.Q = function (t, i, n) {
         }, _75: function (t, i) {
             return i == t[Co][rr] - 2
         }, startdrag: function (t, i) {
-            if (this[YR] && this[uB] && (this._9y = this._fs(t, i), this._9y)) {
-                this[VR](), t.responded = !0;
-                var n = new Wh(i, Wh.POINT_MOVE_START, t, this.element);
-                n[wB] = this._9y, i.onInteractionEvent(n)
-            }
+
         }, onkeyup: function (t, i) {
             this._mousePressed && 16 != !t.keyCode && this.element && this._9y && this._9y.delta && this[PB](this._9y[AB].x, this._9y[AB].y, i, t, !1)
         }, onkeydown: function (t, i) {
@@ -9290,11 +9209,7 @@ window.Q = function (t, i, n) {
         }, ondrag: function (t, i) {
 
         }, enddrag: function (t, i) {
-            if (this.element && this._9y) {
-                this[KR](), this._k3();
-                var n = new Wh(i, Wh[NB], t, this[YR]);
-                n[wB] = this._9y, i[RD](n)
-            }
+
         }, onmousemove: function (t, i) {
         }
     }, E($h, wh), HY[BB] = 1, HY[$B] = X(3724541951), HY.SELECTION_RECTANGLE_FILL_COLOR = X(1430753245), rH.RECTANGLE_SELECTION_MODE_INTERSECT = FB, rH[GB] = zB, HY[YB] = rH[qB];
@@ -9305,15 +9220,10 @@ window.Q = function (t, i, n) {
         onstart: function (t, i) {
             this._kp && this[sg](i)
         }, startdrag: function (t, i) {
-            t.responded || (t[dN] = !0, this._kp = i[VT](t), i.cursor = gg, this._11Id = this[pd][KR](this._11, this).id)
         }, ondrag: function (t, i) {
 
         }, enddrag: function (t, i) {
-            if (this._kp) {
-                this[UB] && (clearTimeout(this[UB]), this[UB] = null), this._fu(!0), this.destroy(i);
-                var n = new Wh(i, Wh.SELECT_END, t, i[_b]);
-                i[RD](n)
-            }
+
         }, onpinch: function (t, i) {
         }, _11: function (t, i) {
             t[Ko] = HY[$B], t[tf] = HY[WB], t[Zo] = HY[BB] / i;
@@ -9470,15 +9380,7 @@ window.Q = function (t, i, n) {
         }, onmousemove: function (t, i) {
 
         }, startdrag: function (t, i) {
-            if (this[YR] && (this.removeDrawable(), this._n4anEdit && (this._9y = this._fs(t, i), this._9y))) {
-                if (t[dN] = !0, this._9y == this[i$]) {
-                    this._9y.start = i[VT](t), this._9y.rotate = this.element[Fo] || 0;
-                    var n = new Wh(i, Wh[l$], t, this.element);
-                    return n[Or] = this.element[Fo], void i[RD](n)
-                }
-                var n = new Wh(i, Wh[v$], t, this[YR]);
-                n[wB] = this._9y, i.onInteractionEvent(n)
-            }
+
         }, _7d: function (t, i, n, e, s, h) {
             var r = this._n4p, a = r.x, o = r.y, f = r[ca], u = r[_a];
             if (h) {
@@ -9524,14 +9426,7 @@ window.Q = function (t, i, n) {
         }, ondrag: function (t, i) {
 
         }, enddrag: function (t, i) {
-            if (this[YR] && this._9y) {
-                if (this._9y == this[i$]) {
-                    var n = new Wh(i, Wh[g$], t, this[YR]);
-                    return n[Or] = this[YR][Fo], void i[RD](n)
-                }
-                var n = new Wh(i, Wh[p$], t, this[YR]);
-                n[wB] = this._9y, i[RD](n)
-            }
+
         }
     }, E(Gh, wh), hH[m$] = Gh;
     var XW = function (t) {

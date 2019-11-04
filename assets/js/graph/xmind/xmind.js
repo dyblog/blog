@@ -36,16 +36,30 @@ function createEdge(name, from, to){
 function createText(text, x, y){
     var node = graph.createNode(text, x, y);
     node.image = null;
-    node.setStyle(Q.Styles.LABEL_BACKGROUND_COLOR, "#51A4C7");
-    node.setStyle(Q.Styles.LABEL_BACKGROUND_GRADIENT, new Q.Gradient(Q.Consts.GRADIENT_TYPE_LINEAR, ['#51A4C7', '#51A4C7'], null, Math.PI/2));
+    node.setStyle(Q.Styles.LABEL_BACKGROUND_COLOR, "#2898E0");
+    node.setStyle(Q.Styles.LABEL_BACKGROUND_GRADIENT, new Q.Gradient(Q.Consts.GRADIENT_TYPE_LINEAR, ['#00d4f9', '#1ea6e6'], null, Math.PI/2));
     node.setStyle(Q.Styles.LABEL_COLOR, "#FFF");
     node.setStyle(Q.Styles.LABEL_PADDING, new Q.Insets(5, 10));
     node.setStyle(Q.Styles.LABEL_ANCHOR_POSITION, Q.Position.CENTER_MIDDLE);
     node.setStyle(Q.Styles.LABEL_BORDER, 0.5);
     node.setStyle(Q.Styles.LABEL_BORDER_STYLE, "#1D4876");
-    node.setStyle(Q.Styles.SELECTION_COLOR, "#1D4876");
+    node.setStyle(Q.Styles.SELECTION_COLOR, "#0F0");
     return node;
 }
+//
+// function createText(text, x, y){
+//     var node = graph.createNode(text, x, y);
+//     node.image = null;
+//     node.setStyle(Q.Styles.LABEL_BACKGROUND_COLOR, "#51A4C7");
+//     node.setStyle(Q.Styles.LABEL_BACKGROUND_GRADIENT, new Q.Gradient(Q.Consts.GRADIENT_TYPE_LINEAR, ['#51A4C7', '#51A4C7'], null, Math.PI/2));
+//     node.setStyle(Q.Styles.LABEL_COLOR, "#FFF");
+//     node.setStyle(Q.Styles.LABEL_PADDING, new Q.Insets(5, 10));
+//     node.setStyle(Q.Styles.LABEL_ANCHOR_POSITION, Q.Position.CENTER_MIDDLE);
+//     node.setStyle(Q.Styles.LABEL_BORDER, 0.5);
+//     node.setStyle(Q.Styles.LABEL_BORDER_STYLE, "#1D4876");
+//     node.setStyle(Q.Styles.SELECTION_COLOR, "#1D4876");
+//     return node;
+// }
 
 var layouter = new Q.TreeLayouter(graph);
 // layouter.isLayoutable = function(node, from){
